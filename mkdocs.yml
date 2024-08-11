@@ -1,0 +1,14 @@
+site_name: MyCinderProject
+theme: material
+
+nav:
+  - Home: index.md
+  - Getting Started: getting_started.md
+  - API Reference: api_reference.md
+
+plugins:
+  - search
+
+markdown_extensions:
+  - toc:
+      permalink: true
