@@ -27,3 +27,9 @@ CMakeLists.txt.user
 # Cinder specific
 blocks/
 build/
+
+
+
+# General
+.DS_Store
+*.DS_Store
