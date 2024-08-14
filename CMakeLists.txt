@@ -38,3 +38,24 @@ ci_make_app(
 if(BUILD_TESTS)
     add_subdirectory(tests)
 endif()
+
+include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+conan_basic_setup()
+
+
+if(WIN32)
+    message(STATUS "Compiling for Windows")
+    # Windows-specific configurations
+elseif(APPLE)
+    message(STATUS "Compiling for macOS")
+    # macOS-specific configurations
+elseif(UNIX)
+    message(STATUS "Compiling for Linux")
+    # Linux-specific configurations
+endif()
+
+
+if(CMAKE_BUILD_TYPE STREQUAL "Coverage")
+    target_compile_options(MyCinderProject PRIVATE --coverage)
+    target_link_libraries(MyCinderProject PRIVATE --coverage)
+endif()
